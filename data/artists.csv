@@ -1,0 +1,101 @@
+artist_id,artist_name,bio,artist_contact_no
+1,Amrita Singh,Contemporary abstract artist focusing on surrealism,9988776655
+2,Ravi Kumar,Portrait artist specializing in realism,9876543210
+3,Leena Sharma,Digital artist working in game art design,9876512345
+4,Manoj Verma,Landscape artist inspired by nature,9988123456
+5,Sarah Ali,Modernist painter with minimalist approach,9123456789
+6,Vikram Nair,Sculptor known for his metal and woodwork,9876545678
+7,Sonal Desai,Fine arts painter focusing on impressionism,9898987654
+8,Ajay Kapoor,Visual artist working in contemporary sculpture,9123451298
+9,Nina Roy,Printmaker specializing in lino cuts and screen printing,9998887776
+10,Devika Iyer,Multimedia artist blending photography and sculpture,9876548765
+11,Harish Mehta,Surrealist painter inspired by Dalí’s work,9988771122
+12,Kavita Chawla,Portrait photographer with a documentary style,9123678901
+13,Sanjay Joshi,Ceramic artist experimenting with organic forms,9234567890
+14,Rekha Malhotra,Textile artist working with natural dyes and fibers,9987654321
+15,Pranav Desai,Concept artist in the film and game industries,9123456780
+16,Maya Pillai,Installations and performance artist,9898765432
+17,Anil Gupta,Street photographer with a social commentary focus,9871234567
+18,Ragini Kaur,Illustrator focusing on children’s book illustrations,9876543219
+19,Sachin Patil,Mixed media artist working with recycled materials,9912345678
+20,Krishna Rao,Fine arts sculptor specializing in marble and stone,9098765432
+21,Vandana Jain,Minimalist painter inspired by geometric forms,9888876543
+22,Sumit Agrawal,Experimental sound and video installation artist,9123459999
+23,Neha Dubey,Fashion illustrator focusing on editorial pieces,9887654321
+24,Aditya Bhatia,Architectural photographer and visual artist,9087654321
+25,Isha Sharma,Woodcut printmaker exploring mythological themes,9988776654
+26,Varun Chauhan,Light installation artist known for immersive works,9976543210
+27,Pooja Kapoor,Digital designer specializing in motion graphics,9876543218
+28,Nikhil Sen,Cubist painter working in large-scale murals,9765432109
+29,Anjali Bansal,Sculptor creating large-scale outdoor installations,9678901234
+30,Ramesh Shah,Watercolor artist known for intricate urban landscapes,9865432109
+31,Swati Verma,Art photographer exploring identity and nature,9923456781
+32,Kartik Sinha,Contemporary figurative artist with realist techniques,9212345678
+33,Shreya Mishra,Street artist known for her vibrant graffiti murals,9912345566
+34,Manisha Rao,Collage artist working with found materials,9654321890
+35,Deepak Ghosh,Cartoonist and comic book artist,9834567890
+36,Vidhi Aggarwal,Fashion photographer with a unique editorial style,9234567888
+37,Rajesh Khanna,Experimental painter exploring color theory,9112345678
+38,Kiran Jha,Installation artist working in public spaces,9876501234
+39,Aditi Menon,Mixed-media painter focusing on the female form,9900012345
+40,Meghna Sen,New media artist working with interactive technologies,9954321876
+41,Pawan Gupta,Portrait sculptor known for his marble work,9234567891
+42,Vidya Narayan,Digital painter exploring AI-generated art,9876545678
+43,Ritika Malhotra,Conceptual artist with a focus on surreal visuals,9182736450
+44,Yashwant Deshmukh,Experimental painter focusing on abstraction,9123451111
+45,Niharika Kaur,Sculptor creating miniature installations,9876549898
+46,Nishant Dubey,Pop artist known for his vibrant color palette,9098765444
+47,Tara Malik,Performance artist exploring body and identity,9988770099
+48,Rahul Joshi,Watercolorist known for his landscape paintings,9298765432
+49,Shubham Nair,Illustrator working in graphic novels and zines,9023456789
+50,Rupa Patel,Ceramicist known for her functional art pieces,9198765432
+51,Satish Reddy,Art photographer with a documentary approach,9134567890
+52,Anika Kapoor,Abstract painter exploring light and color,9209876543
+53,Aman Shah,Sculptor with a focus on modern architecture,9182736464
+54,Dipti Iyer,Fashion illustrator known for her bold lines,9889988776
+55,Mohit Singh,Digital artist focusing on 3D modeling,9877654321
+56,Karishma Das,Street artist known for socio-political commentary,9276543210
+57,Vivek Nanda,Mixed media artist working with eco-friendly materials,9998771234
+58,Sunil Rathore,Textile artist using sustainable fabrics,9765432198
+59,Kalyani Sen,Art critic and multimedia installation artist,9932109876
+60,Jyoti Agarwal,Performance artist exploring gender roles,9871123456
+61,Nitin Arora,Digital sculptor working in virtual reality,9023456790
+62,Vishal Pandey,Ceramicist known for his geometric forms,9765432101
+63,Priya Gupta,Experimental printmaker using new technologies,9834567123
+64,Harpreet Singh,Fashion designer and conceptual artist,9123409876
+65,Kavya Menon,Collage artist exploring identity and diaspora,9987654000
+66,Sandeep Mishra,Experimental sound artist working with field recordings,9182736451
+67,Rupali Desai,New media artist exploring interactive sculpture,9198765434
+68,Parul Jain,Installations artist blending architecture and nature,9923456782
+69,Irfan Ali,Pop culture illustrator with a focus on satire,9234567889
+70,Mukesh Dubey,Conceptual photographer working in large-scale installations,9845678901
+71,Anuja Shah,Experimental filmmaker blending video and performance art,9879876543
+72,Krish Malhotra,Light and space artist working in large-scale installations,9212345677
+73,Navin Gupta,Pop artist with a focus on celebrity culture,9765432108
+74,Shruti Bhatia,Ceramic artist creating whimsical animal sculptures,9871230987
+75,Pankaj Verma,Digital painter exploring virtual landscapes,9923456732
+76,Gauri Khanna,Watercolorist with a focus on botanical studies,9878765434
+77,Harini Prasad,Mixed-media artist exploring memory and identity,9213456788
+78,Kuldeep Chawla,Conceptual photographer focusing on urban decay,9823456789
+79,Sushma Rao,Fashion photographer with a cinematic style,9923451209
+80,Aryan Verma,Experimental filmmaker known for surreal narratives,9123456782
+81,Monica Desai,Performance artist blending dance and theater,9988770011
+82,Rahul Sinha,Collage artist working with found photographs,9323456789
+83,Manav Agarwal,Sculptor focusing on large-scale kinetic installations,9876541221
+84,Neeraj Patel,Textile artist creating eco-friendly fabric sculptures,9109876543
+85,Sonia Narayan,Art photographer with a focus on architecture,9923456711
+86,Kiran Patel,New media artist working with interactive sound,9182736452
+87,Nandita Mehra,Ceramicist known for her hand-thrown pottery,9878765433
+88,Pratik Deshmukh,Street artist with a focus on contemporary issues,9998887766
+89,Asha Sharma,Performance artist exploring social themes,9823456710
+90,Siddharth Jain,Portrait photographer with an editorial style,9872345678
+91,Arvind Mehta,Fashion illustrator focusing on luxury design,9012345678
+92,Tanvi Deshmukh,Mixed-media artist focusing on environmental issues,9870009876
+93,Vikram Sen,Ceramic artist working with sculptural forms,9192939495
+94,Ila Sinha,Installation artist focusing on site-specific works,9298765433
+95,Sameer Khurana,Digital sculptor with a focus on 3D printing,9871234590
+96,Priyanshi Gupta,Illustrator focusing on modern cartoons,9234567899
+97,Mayank Sharma,Light artist exploring natural and artificial light,9876549900
+98,Reena Jain,Fashion photographer with a dramatic portrait style,9109876512
+99,Vidya Nair,Ceramic artist working with minimalist design,9987651234
+100,Adarsh Kapoor,Conceptual photographer exploring time and decay,9932109871
