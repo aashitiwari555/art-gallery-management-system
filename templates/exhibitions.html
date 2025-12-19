@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibitions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h3 {
+            color: #35424a;
+        }
+
+        .exhibition-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input[type="text"], input[type="number"], input[type="datetime-local"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #35424a;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2c3e50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .message {
+            color: red;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exhibitions</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('galleries') }}">Galleries</a></li>
+                <li><a href="{{ url_for('artists') }}">Artists</a></li>
+                <li><a href="{{ url_for('artworks') }}">Artworks</a></li>
+                <li><a href="{{ url_for('buyers') }}">Buyers</a></li>
+                <li><a href="{{ url_for('sales') }}">Sales</a></li>
+                <li><a href="{{ url_for('upcoming_exhibitions') }}">Upcoming Exhibitions</a></li>
+                <li><a href="{{ url_for('search_artworks') }}">Search Artworks</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Manage Exhibitions</h2>
+
+        <form method="POST" class="exhibition-form">
+            <input type="text" name="exhibition_name" placeholder="Exhibition Name" required>
+            <input type="number" name="gallery_id" placeholder="Gallery ID" required>
+            <input type="datetime-local" name="start_date" required>
+            <input type="datetime-local" name="end_date" required>
+            <input type="number" name="artwork_id" placeholder="Artwork ID" required>
+            <button type="submit" name="add">Add Exhibition</button>
+        </form>
+
+        <h3>Search Exhibition</h3>
+        <form method="POST">
+            <input type="text" name="exhibition_id" placeholder ="Enter Exhibition ID to Search" required>
+            <button type="submit" name="search">Search</button>
+        </form>
+        {% if message %}
+            <div class="message">
+                {{ message }}
+            </div>
+        {% endif %}
+
+        <h3>Existing Exhibitions</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Gallery ID</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Artwork ID</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if search_results %}
+                    <tr>
+                        <td>{{ search_results[0] }}</td>
+                        <td>{{ search_results[1] }}</td>
+                        <td>{{ search_results[2] }}</td>
+                        <td>{{ search_results[3] }}</td>
+                        <td>{{ search_results[4] }}</td>
+                        <td>{{ search_results[5] }}</td>
+                        <td>
+                            <form method="POST">
+                                <input type="hidden" name="exhibition_id" value="{{ search_results[0] }}">
+                                <button type="submit" name="delete">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% else %}
+                    {% for exhibition in exhibitions %}
+                    <tr>
+                        <td>{{ exhibition[0] }}</td>
+                        <td>{{ exhibition[1] }}</td>
+                        <td>{{ exhibition[2] }}</td>
+                        <td>{{ exhibition[3] }}</td>
+                        <td>{{ exhibition[4] }}</td>
+                        <td>{{ exhibition[5] }}</td>
+                        <td>
+                            <form method="POST">
+                                <input type="hidden" name="exhibition_id" value="{{ exhibition[0] }}">
+                                <button type="submit" name="delete">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

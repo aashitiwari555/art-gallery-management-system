@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Exhibitions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #35424a;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .card {
+            background: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 1rem;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin: 0 0 0.5rem;
+            color: #35424a;
+        }
+
+        .card p {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+
+        .no-exhibitions {
+            text-align: center;
+            color: #666;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Upcoming Exhibitions</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('galleries') }}">Galleries</a></li>
+                <li><a href="{{ url_for('artists') }}">Artists</a></li>
+                <li><a href="{{ url_for('artworks') }}">Artworks</a></li>
+                <li><a href="{{ url_for('buyers') }}">Buyers</a></li>
+                <li><a href="{{ url_for('exhibitions') }}">Exhibitions</a></li>
+                <li><a href="{{ url_for('upcoming_exhibitions') }}">Upcoming Exhibitions</a></li>
+                <li><a href="{{ url_for('sales') }}">Sales</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Closest Upcoming Exhibitions</h2>
+
+        <div class="card-container">
+            {% if exhibitions %}
+                {% for exhibition in exhibitions %}
+                <div class="card">
+                    <h3>{{ exhibition[1] }}</h3> <!-- Exhibition Name -->
+                    <p><strong>Gallery:</strong> {{ exhibition[2] }}</p> <!-- Gallery -->
+                    <p><strong>Start Date:</strong> {{ exhibition[3] }}</p> <!-- Start Date -->
+                    <p><strong>End Date:</strong> {{ exhibition[4] }}</p> <!-- End Date -->
+                </div>
+                {% endfor %}
+            {% else %}
+                <p class="no-exhibitions">No upcoming exhibitions found.</p>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Search Artworks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 15px;
+            width: calc(30% - 40px); /* Adjusted for three columns */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.02);
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+        }
+        .toggle-button {
+            background: #35424a;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .card {
+                width: calc(50% - 40px);
+            }
+        }
+        @media (max-width: 480px) {
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Search Artworks</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('galleries') }}">Galleries</a>
+            <a href="{{ url_for('artists') }}">Artists</a>
+            <a href="{{ url_for('artworks') }}">Artworks</a>
+            <a href="{{ url_for('buyers') }}">Buyers</a>
+            <a href="{{ url_for('exhibitions') }}">Exhibitions</a>
+            <a href="{{ url_for('upcoming_exhibitions') }}">Upcoming Exhibitions</a>
+            <a href="{{ url_for('sales') }}">Sales</a>
+        </nav>
+    </header>
+
+    <main>
+        <form method="POST" style="margin-bottom: 20px;">
+            <input type="text" name="title" placeholder="Artwork Title">
+            <input type="number" name="artist_id" placeholder="Artist ID">
+            <input type="text" name="artist_name" placeholder="Artist Name">
+            <input type="number" name="gallery_id" placeholder="Gallery ID">
+            <input type="text" name="gallery_name" placeholder="Gallery Name">
+            <input type="number" name="buyer_id" placeholder="Buyer ID">
+            <input type="text" name="buyer_name" placeholder="Buyer Name">
+            <input type="number" name="exhibition_id" placeholder="Exhibition ID">
+            <input type="text" name="exhibition_name" placeholder="Exhibition Name">
+            <input type="number" name="min_price" placeholder="Min Price">
+            <input type="number" name="max_price" placeholder="Max Price">
+            <button type="submit">Search</button>
+        </form>
+
+        {% if artworks %}
+        {% for artwork in artworks %}
+        <div class="card">
+            <h3>{{ artwork[1] }}</h3>
+            <p><strong>Artist:</strong> {{ artwork[6] }}</p>
+            <p><strong>Gallery:</strong> {{ artwork[10] }}</p>
+            <p><strong>Price:</strong> ₹{{ artwork[4] }}</p> <!-- Price in rupees -->
+            <button class="toggle-button" onclick="toggleDetails(this)">Show Details</button>
+            <div class="details">
+                <p><strong>Year Created:</strong> {{ artwork[2] }}</p>
+                <p><strong>Medium:</strong> {{ artwork[3] }}</p>
+                <p><strong>Artist Bio:</strong> {{ artwork[7] }}</p>
+                <p><strong>Gallery Location:</strong> {{ artwork[11] }}</p>
+                <p><strong>Buyer Name:</strong> {{ artwork[14] }}</p>
+                <p><strong>Exhibition Name:</strong> {{ artwork[18] }}</p>
+                <p><strong>Sale Price:</strong> ₹{{ artwork[23] }}</p> <!-- Sale price in rupees -->
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>No artworks found.</p>
+        {% endif %}
+    </main>
+
+    <script>
+        function toggleDetails(button) {
+            const details = button.nextElementSibling;
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+            button.textContent = details.style.display === 'block' ? 'Hide Details' : 'Show Details';
+        }
+    </script>
+</body>
+</html>
